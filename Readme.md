@@ -1,7 +1,7 @@
 # Проект «Большое путешествие»
 
 * Студент: [Aidar Safiullin](https://up.htmlacademy.ru/ecmascript/15/user/1183001).
-* Наставник: `Неизвестно`.
+* Наставник: [Ildar Bikmamatov](https://github.com/ildar-ceo).
 
 ---
 
