@@ -6,6 +6,8 @@ import { createSiteAddNewPointTemplate } from './view/add-point';
 import { createSiteEditPointTemplate } from './view/edit-point';
 import { createSitePointTemplate } from './view/point-item';
 
+const POINTS_COUNT = 3;
+
 const render = (container, template, place) => {
   container.insertAdjacentHTML(place, template);
 };
@@ -23,7 +25,7 @@ render(siteFilter, createSiteFilterTemplate(), 'beforeend');
 render(tripEvents, createSiteSortTemplate(), 'beforeend');
 render(tripEvents, createSiteEditPointTemplate(), 'beforeend');
 const list = tripEvents.querySelector('.trip-events__list');
-for(let i = 0; i < 3; i++) {
+for(let i = 0; i < POINTS_COUNT; i++) {
   render(list, createSitePointTemplate(), 'beforeend');
 }
 render(list, createSiteAddNewPointTemplate(), 'beforeend');
