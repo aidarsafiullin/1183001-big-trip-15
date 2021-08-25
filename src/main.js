@@ -2,6 +2,7 @@ import { createSiteTripInfoTemplate } from './view/trip-info';
 import { createSiteMenuTemplate } from './view/menu';
 import { createSiteFilterTemplate } from './view/filter';
 import { createSiteSortTemplate } from './view/sort';
+import {createEventListTemplate} from './view/event-list.js';
 import { createSiteAddNewPointTemplate } from './view/add-point';
 import { createSiteEditPointTemplate } from './view/edit-point';
 import { createSitePointTemplate } from './view/point-item';
@@ -19,13 +20,16 @@ const siteFilter = siteHeaderMain.querySelector('.trip-controls__filters');
 const siteMain = document.querySelector('.page-main');
 const tripEvents = siteMain.querySelector('.trip-events');
 
+
 render(siteHeaderMain, createSiteTripInfoTemplate(), 'afterbegin');
 render(siteNav, createSiteMenuTemplate(), 'beforeend');
 render(siteFilter, createSiteFilterTemplate(), 'beforeend');
+
 render(tripEvents, createSiteSortTemplate(), 'beforeend');
-render(tripEvents, createSiteEditPointTemplate(), 'beforeend');
-const list = tripEvents.querySelector('.trip-events__list');
+render(tripEvents, createEventListTemplate(), 'beforeend');
+const tripEventListElement = tripEvents.querySelector('.trip-events__list');
+render(tripEventListElement, createSiteEditPointTemplate(), 'beforeend');
 for(let i = 0; i < POINTS_COUNT; i++) {
-  render(list, createSitePointTemplate(), 'beforeend');
+  render(tripEventListElement, createSitePointTemplate(), 'beforeend');
 }
-render(list, createSiteAddNewPointTemplate(), 'beforeend');
+render(tripEventListElement, createSiteAddNewPointTemplate(), 'beforeend');
